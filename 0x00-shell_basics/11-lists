@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a . .. /bott
+ls -al . .. /bott

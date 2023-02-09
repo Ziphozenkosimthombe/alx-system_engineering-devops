@@ -1,2 +1,2 @@
-#!/bin/bassh
+#!/bin/bash
 chomd ugo+x hello

@@ -1,2 +1,2 @@
 #!/bin/bash
-gep -1 bin /etc/passwd
+gep -c bin /etc/passwd

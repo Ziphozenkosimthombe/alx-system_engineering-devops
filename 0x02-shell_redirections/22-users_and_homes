@@ -1,6 +1,2 @@
 #!/bin/bash
-username=$(echo /etc/passwd | cut -d: -f1)
-home_directory=$(echo /etc/passwd | cut -d:-f6)
-
-echo "user:$username, Home directory:$home _directory"
-done | sort
+cut -d ":" -f1,6 /etc/passwd | sort

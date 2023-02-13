@@ -1,2 +1,2 @@
 #!/bin/bash
-gep -i bin /etc/passwd
+gep -i bin /etc/passwd | wc -l

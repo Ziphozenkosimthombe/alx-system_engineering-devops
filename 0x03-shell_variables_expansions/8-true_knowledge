@@ -1,2 +1,3 @@
 #!/bin/bash
-export TRUEKNOWLEDGE=128
+export TRUEKNOWLEDGE=$((64+64))
+

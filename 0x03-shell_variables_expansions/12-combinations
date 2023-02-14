@@ -1,0 +1,2 @@
+#!/bin/bash
+printf {a..z} {aa..zz}

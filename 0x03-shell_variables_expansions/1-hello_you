@@ -1,0 +1,4 @@
+#!/bin/bash
+mynun="hello user"
+
+echo "hello $USER"

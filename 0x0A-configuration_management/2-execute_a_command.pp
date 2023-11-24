@@ -4,4 +4,5 @@ exec { 'kill':
   path         => '/usr/bin/',
   onlyif       => 'pgrep -f killmenow',
   logoutput    => true,
+  refreshonly  => true,
 }

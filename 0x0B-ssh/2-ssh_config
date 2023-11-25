@@ -1,4 +1,7 @@
-Host 271747-web-01
-    IdentifyFile ~/.ssh/school
-    User ubuntu
+Host *
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+    IdentityFile ~/.ssh/school
     PasswordAuthentication no

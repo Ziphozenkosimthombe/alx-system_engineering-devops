@@ -1,0 +1,4 @@
+Host 271747-web-01
+    IdentifyFile ~/.ssh/school
+    User ubuntu
+    PasswordAuthentication no

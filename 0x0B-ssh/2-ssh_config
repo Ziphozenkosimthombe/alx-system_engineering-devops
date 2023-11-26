@@ -1,7 +1,5 @@
-Host *
-    SendEnv LANG LC_*
-    HashKnownHosts yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials no
+Host 271747-web-01
+    HostName 54.159.23.65
+    User ubuntu
     IdentityFile ~/.ssh/school
     PasswordAuthentication no

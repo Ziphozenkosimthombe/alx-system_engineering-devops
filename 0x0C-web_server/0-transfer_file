@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Bash script that transfers a file from our client to a server
+
+# define variables
+FILE_TO_TRANSFER='$1'
+SERVER_IP='$2'
+SERVER_USER='$3'
+SSH_KEY='$4'
+
+if [ "$#" -lt 4 ]; then
+    echo 'Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY'
+    exit 1
+fi
+
+scp_cmd="scp -o StrictHostKeyChecking=no -i $path_to_ssh_key $path_to_file $username@$server_ip:~/"
+
+# Execute the SCP command
+$scp_cmd

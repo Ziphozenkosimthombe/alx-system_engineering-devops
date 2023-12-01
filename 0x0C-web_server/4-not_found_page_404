@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
-# install nginx, change root content and redirect to youtube link
+# Install nginx on your web-01 server
+
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
-sudo sh -c 'printf "Ceci n'\''est pas une page\n" > /var/www/html/404.html'
-sudo sed -i '24i\    location /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\t\t\n}\n\t\terror_page 404             /404.html;\n' /etc/nginx/sites-available/default
+echo 'Hello World!' | sudo tee /var/www/html/index.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+sudo sed -i '/server_name _;/a \
+    error_page 404 /404.html;\n\
+    location = /404.html {\n\
+        internal;\n\
+    }' /etc/nginx/sites-available/default
+
 sudo service nginx start
-sudo nginx -s reload

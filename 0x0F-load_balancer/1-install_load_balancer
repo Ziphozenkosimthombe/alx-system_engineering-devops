@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy on lb-01 server.
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+sudo sh -c 'echo "frontend lb-01
+    bind *:80
+    mode http
+    default_backend webservers
+
+backend webservers
+    mode http
+    balance roundrobin
+    server 271747-web-01 35.153.18.76:80
+    server 271747-web-02 34.207.64.103:80" > /etc/haproxy/haproxy.cfg' 
+
+sudo service haproxy restart

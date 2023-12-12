@@ -1,0 +1,11 @@
+frontend lb-01
+    bind *:80
+    bind *:443 ssl crt /etc/letsencrypt/live/www.zipho.tech-0001/fullchain.pem
+    mode http
+    default_backend webservers
+
+backend webservers
+    mode http
+    balance roundrobin
+    server 271747-web-01 35.153.18.76:80
+    server 271747-web-02 34.207.64.103:80
